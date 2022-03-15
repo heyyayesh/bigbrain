@@ -1,0 +1,56 @@
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+} */
+
+.startPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  font-family: Karla;
+  font-weight: 700;
+  color: #293264;
+}
+
+.desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  text-align: center;
+  color: #293264;
+
+}
+
+.startBtn {
+  width: 200px;
+  height: 50px;
+  background: #4D5B9E;
+  border-radius: 15px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  text-align: center;
+  color: #F5F7FB;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.topBlob {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.bottomBlob {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
