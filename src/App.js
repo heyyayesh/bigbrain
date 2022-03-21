@@ -2,6 +2,7 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 import StartPage from './components/startpage/StartPage';
 import MainPage from './components/mainpage/MainPage';
+import he from 'he';
 
 function App() {
   const [gameStarted, setGameStarted] = React.useState(false);
@@ -28,8 +29,8 @@ function App() {
       data.results.forEach(ques => {
         arr.push({
           id: nanoid(),
-          title: ques.question,
-          options: shuffleArray([...ques.incorrect_answers, ques.correct_answer]),
+          title: he.decode(ques.question),
+          options: shuffleArray([...ques.incorrect_answers, ques.correct_answer].map(opt => he.decode(opt))),
           answer: ques.correct_answer,
           selected: '',
         })
