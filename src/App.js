@@ -8,6 +8,10 @@ function App() {
 
   const [questions, setQuestions] = React.useState([]);
 
+  const [score, setScore] = React.useState(0);
+
+  const [checked, setChecked] = React.useState(false);
+
   const shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -16,7 +20,7 @@ function App() {
     return array;
   }
 
-  React.useEffect(() => {
+  function fetchData() {
     const arr = [];
     fetch('https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple')
     .then(res => res.json()
@@ -33,6 +37,10 @@ function App() {
     })
     )
     setQuestions(arr);
+  }
+
+  React.useEffect(() => {
+    fetchData();
   }, []);
 
   function handleStartClick() {
@@ -53,7 +61,21 @@ function App() {
     })
   }
 
-  console.log(questions);
+  function handleCheckClick() {
+    questions.forEach(ques => {
+      if (ques.selected === ques.answer)
+        setScore(prevScore => prevScore + 1);
+    })
+
+    setChecked(prevChecked => !prevChecked);
+  }
+
+  function handleRestartClick() {
+    fetchData();
+    setScore(0);
+    setChecked(false);
+    setGameStarted(false);
+  }
 
   return (
     <>
@@ -63,6 +85,10 @@ function App() {
       <MainPage
         questions={questions}
         handleOptionClick={handleOptionClick}
+        handleCheckClick={handleCheckClick}
+        handleRestartClick={handleRestartClick}
+        checked={checked}
+        score={score}
       />
       }
     </>

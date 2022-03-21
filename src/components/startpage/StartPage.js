@@ -7,7 +7,7 @@ function StartPage(props) {
   return (
     <div className={styles.startPage}>
       <h1 className={styles.title}>Quizzical</h1>
-      <p className={styles.desc}>Some description if needed</p>
+      <p className={styles.desc}>Test your general knowledge!</p>
       <button className={styles.startBtn} onClick={props.handleClick}>Start Quiz</button>
       <img className={styles.topBlob} src={blob5} alt='blob'/>
       <img className={styles.bottomBlob} src={blobs} alt='blob'/>

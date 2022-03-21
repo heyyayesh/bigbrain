@@ -15,7 +15,6 @@
 
 .answers {
   display: flex;
-  /* justify-content: space-between; */
   gap: 20px;
 }
 
@@ -38,5 +37,15 @@
 
 .option.selected {
   background: #D6DBF5;
-  border: none;
+  border: 0.794239px solid transparent;
+}
+
+.option.correct {
+  background: #94D7A2;
+  border: 0.794239px solid transparent;
+}
+
+.option.wrong {
+  background: #F8BCBC;
+  border: 0.794239px solid transparent;
 }

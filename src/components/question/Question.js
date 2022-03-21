@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './question.module.css';
 import { nanoid } from 'nanoid';
 
-function Question({title, id, options, handleOptionClick, selected}) {  
+function Question({title, id, options, handleOptionClick, selected, checked, answer}) {  
 
   const optionsElems = options.map(opt => {
     const keyId = nanoid();
@@ -14,6 +14,8 @@ function Question({title, id, options, handleOptionClick, selected}) {
         onClick={(e) => handleOptionClick(e.target.value, id)}
         className={`${styles.option}
                     ${selected === opt ? styles.selected : ''}
+                    ${(checked && opt === answer) ? styles.correct : ''}
+                    ${(checked && selected === opt && opt !== answer) ? styles.wrong : ''}
                   `}
       >
         {opt}
