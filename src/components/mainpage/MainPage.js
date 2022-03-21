@@ -1,24 +1,23 @@
 import React from 'react';
-import styles from './mainpage.module.css';
+import Question from '../question/Question';
+// import styles from './mainpage.module.css';
 
-function MainPage() {
-  const [questions, setQuestions] = React.useState([]);
+function MainPage({questions, handleOptionClick}) {
+  const quesElem = questions.map(ques => {
+    return (
+      <Question 
+        key={ques.id} 
+        title={ques.title} 
+        id={ques.id} 
+        options={ques.options}
+        selected={ques.selected}
+        handleOptionClick={handleOptionClick}
+      />
+    )
+  })
 
-  React.useEffect(() => {
-    setQuestions(
-      fetch('https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple')
-      .then(res => res.json()
-      .then(data => setQuestions(data.results))
-    ))
-  }, [])
-
-  console.log(questions);
-
-  return (
-    <div>
-      
-    </div>
-  )
+  console.log(quesElem);
+  return (quesElem)
 }
 
 export default MainPage;
