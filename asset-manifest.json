@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bigbrain/static/css/main.6b9dd1d9.css",
+    "main.js": "/bigbrain/static/js/main.25b798e6.js",
+    "index.html": "/bigbrain/index.html",
+    "main.6b9dd1d9.css.map": "/bigbrain/static/css/main.6b9dd1d9.css.map",
+    "main.25b798e6.js.map": "/bigbrain/static/js/main.25b798e6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b9dd1d9.css",
+    "static/js/main.25b798e6.js"
+  ]
+}
