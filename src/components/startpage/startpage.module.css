@@ -1,17 +1,10 @@
-/* body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-} */
-
 .startPage {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  height: 100vh;
 }
 
 .title {
@@ -47,10 +40,12 @@
   position: absolute;
   top: 0;
   right: 0;
+  z-index: -1;
 }
 
 .bottomBlob {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: -1;
 }

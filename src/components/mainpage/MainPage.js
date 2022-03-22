@@ -33,10 +33,9 @@ function MainPage({questions, handleOptionClick, handleCheckClick, handleRestart
 
   return (
     <div className={`${styles.mainpage}`}>
-      <div className={`${styles.questionsDiv}`}>{quesElem}</div>
-      
+      <h1 className={styles.mainpageHeader}>Questions</h1>
+      <div className={`${styles.questionsDiv}`}>{quesElem}</div>    
       {checked ? afterCheckedElems : beforeCheckedElems}
-
       <img className={`${styles.blob} ${styles.top}`} src={topBlob} alt='top blob'/>
       <img className={`${styles.blob} ${styles.bottom}`} src={bottomBlob} alt='bottom blob'/>
     </div>

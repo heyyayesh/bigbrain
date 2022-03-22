@@ -4,6 +4,7 @@
   gap: 20px;
   border-bottom: 2px solid #DBDEF0;
   padding: 20px 10px;
+  max-height: fit-content;
 }
 
 .questionTitle {
@@ -48,4 +49,20 @@
 .option.wrong {
   background: #F8BCBC;
   border: 0.794239px solid transparent;
+}
+
+@media screen and (max-width: 600px) {
+  .answers {
+    /* display: grid;
+    grid-template-columns: repeat(2, auto); */
+    flex-direction: column;
+  }
+
+  .option {
+    text-align: start;
+  }
+
+  .questionTitle {
+    font-size: 22px;
+  }
 }
